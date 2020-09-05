@@ -1,17 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+export * from "./components/shared/global";
+export * from "./components/shared/styles";
+export * from "./components/shared/animation";
+export * from "./components/button";
+export * from "./components/button";
+export * from "./components/avatar";
+export * from "./components/badge";
+export * from "./components/carousel";
+export * from "./components/highlight";
+export * from "./components/icon";
+export * from "./components/message";
+export * from "./components/modal";
+export * from "./components/progress";
+export * from "./components/radio";
+export * from "./components/upload";
+export * from "./components/tree";
+export * from "./components/datepicker";
+export * from "./components/pagination";
+export * from "./components/table";

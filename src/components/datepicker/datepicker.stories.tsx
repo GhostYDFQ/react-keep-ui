@@ -1,0 +1,27 @@
+import React from "react";
+import { DatePicker } from "./index";
+import {
+    withKnobs,
+    text,
+    number,
+    boolean,
+    color,
+    select,
+} from "@storybook/addon-knobs";
+import { action } from "@storybook/addon-actions";
+
+export default {
+    title: "组件/Datepicker",
+    component: DatePicker,
+    decorators: [withKnobs],
+};
+
+export const knobsDatePicker = () => (
+    <div style={{ height: "500px" }}>
+        <DatePicker
+            callback={action("callback")}
+            delay={number("delay", 200)}
+            initDate={text("initDate", "")}
+        ></DatePicker>
+    </div>
+);
