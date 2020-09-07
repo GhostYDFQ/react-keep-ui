@@ -16,12 +16,19 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",
+    "build": "rm -rf ./dist && npm run build-all && npm run build-cjs",
+    "build-cjs": "microbundle build --tsconfig tsconfig.build.json --jsx React.createElement --format cjs",
+    "build-all": "microbundle build --tsconfig tsconfig.build.json --jsx React.createElement",
+    "eject": "react-scripts eject",
+    "build-storybook": "build-storybook --no-dll --quiet",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "test": "react-scripts test --watchAll=false",
+    "test:watch": "react-scripts test",
     "coverage": "react-scripts test --coverage --watchAll=false",
-    "build": "tsc -p tsconfig.build.json"
+    "coverall": "npm run coverage  && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "postinstall": "patch-package",
+    "release": "npm run build && np"
   },
   "eslintConfig": {
     "extends": "react-app"
