@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-
+// [boolean, (v: boolean) => void, () => void]
 export function useStateAnimation(parentSetState: (v: boolean) => void, delay: number = 300): any{
     const [state, setState] = useState(true);
     const [innerClose, unmount] = useMemo(() => {
