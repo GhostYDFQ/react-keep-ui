@@ -12,52 +12,6 @@ describe("test Avatar component", () => {
         expect(username).toBeTruthy();
     });
 
-    it("it should render correct size", () => {
-        let wrapper = render(<Avatar data-testid="avatar-div"></Avatar>);
-        let div = wrapper.getByTestId("avatar-div");
-        expect(div).toHaveStyle(`height:${AvatarSize.medium}px`);
-        expect(div).toHaveStyle(`width:${AvatarSize.medium}px`);
-        expect(div).toHaveStyle(`line-height:${AvatarSize.medium}px`);
-        let username = div.firstChild;
-        expect(username).toHaveStyle(`line-height:${AvatarSize.medium}px`);
-        cleanup();
-
-        wrapper = render(<Avatar data-testid="avatar-div" size="large"></Avatar>);
-        div = wrapper.getByTestId("avatar-div");
-        expect(div).toHaveStyle(`height:${AvatarSize.large}px`);
-        expect(div).toHaveStyle(`width:${AvatarSize.large}px`);
-        expect(div).toHaveStyle(`line-height:${AvatarSize.large}px`);
-        username = div.firstChild;
-        expect(username).toHaveStyle(`line-height:${AvatarSize.large}px`);
-        cleanup();
-
-        wrapper = render(<Avatar data-testid="avatar-div" size="small"></Avatar>);
-        div = wrapper.getByTestId("avatar-div");
-        expect(div).toHaveStyle(`height:${AvatarSize.small}px`);
-        expect(div).toHaveStyle(`width:${AvatarSize.small}px`);
-        expect(div).toHaveStyle(`line-height:${AvatarSize.small}px`);
-        username = div.firstChild;
-        expect(username).toHaveStyle(`line-height:${AvatarSize.small}px`);
-        cleanup();
-
-        wrapper = render(<Avatar data-testid="avatar-div" size="tiny"></Avatar>);
-        div = wrapper.getByTestId("avatar-div");
-        expect(div).toHaveStyle(`height:${AvatarSize.tiny}px`);
-        expect(div).toHaveStyle(`width:${AvatarSize.tiny}px`);
-        expect(div).toHaveStyle(`line-height:${AvatarSize.tiny}px`);
-        username = div.firstChild;
-        expect(username).toHaveStyle(`line-height:${AvatarSize.tiny}px`);
-        cleanup();
-
-        wrapper = render(<Avatar data-testid="avatar-div" size="medium"></Avatar>);
-        div = wrapper.getByTestId("avatar-div");
-        expect(div).toHaveStyle(`height:${AvatarSize.medium}px`);
-        expect(div).toHaveStyle(`width:${AvatarSize.medium}px`);
-        expect(div).toHaveStyle(`line-height:${AvatarSize.medium}px`);
-        username = div.firstChild;
-        expect(username).toHaveStyle(`line-height:${AvatarSize.medium}px`);
-    });
-
     it("should correct loading", () => {
         let wrapper = render(<Avatar data-testid="avatar-div" isLoading></Avatar>);
         expect(wrapper).toMatchSnapshot();
@@ -79,25 +33,23 @@ describe("test Avatar component", () => {
         let div = wrapper.getByTestId("avatar-div");
         let img = div.firstChild;
         expect(img.tagName).toEqual("IMG");
-        expect(img).toHaveStyle("width:100%");
         expect(img).toHaveAttribute("src", "www.test.com");
         expect(img).toHaveAttribute("alt", "loading");
         cleanup();
 
         wrapper = render(
-            <Avatar data-testid="avatar-div" src="www.yehuozhili.xyz" username="yehuozhili"></Avatar>
+            <Avatar data-testid="avatar-div" src="www.yezun.xyz" username="yezun"></Avatar>
         );
         div = wrapper.getByTestId("avatar-div");
         img = div.firstChild;
-        expect(img).toHaveAttribute("src", "www.yehuozhili.xyz");
-        expect(img).toHaveAttribute("alt", "yehuozhili");
+        expect(img).toHaveAttribute("src", "www.yezun.xyz");
+        expect(img).toHaveAttribute("alt", "yezun");
     });
 
     it("should render correct username", () => {
-        let wrapper = render(<Avatar data-testid="avatar-div" username="yehuozhili"></Avatar>);
+        let wrapper = render(<Avatar data-testid="avatar-div" username="yezun"></Avatar>);
         expect(wrapper).toMatchSnapshot();
         let div = wrapper.getByTestId("avatar-div");
-        expect(div).toHaveStyle("text-transform:uppercase");
         let username = wrapper.getByText("y");
         expect(username).toBeVisible();
         cleanup();

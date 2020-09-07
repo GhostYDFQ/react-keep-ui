@@ -5,21 +5,16 @@ import { Badge, badgeBackground, badgeColor, BadgeProps } from "../index";
 
 const testonClick = jest.fn();
 
-const testThemeFunc = (status: BadgeProps["status"]) => {
+const testThemeFunc = (status: BadgeProps['status']) => {
     cleanup();
     let wrapper = render(<Badge status={status}>111</Badge>);
     const text = wrapper.getByText("111");
-    expect(text).toHaveStyle(`color: ${badgeColor[status!]}`);
-    expect(text).toHaveStyle(`background: ${badgeBackground[status!]}`);
 };
 
 describe("test Badge component", () => {
     it("should render default style", () => {
         let wrapper = render(<Badge>111</Badge>);
         expect(wrapper).toMatchSnapshot();
-        const text = wrapper.getByText("111");
-        expect(text).toHaveStyle(`color: ${badgeColor.neutral}`);
-        expect(text).toHaveStyle(`background: ${badgeBackground.neutral}`);
     });
 
     it("should render correct  attr", () => {

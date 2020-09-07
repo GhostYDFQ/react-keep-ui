@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Modal component render correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body
+    style="overflow: hidden;"
+  >
+    <div />
+    <div
+      class="sc-jSFkmK CCCMh"
+    >
+      <div
+        class="sc-gKAblj fvTokO"
+      >
+        <div>
+          <div
+            class="sc-kEqYlL kagACF"
+          >
+            标题
+          </div>
+          <div
+            class="sc-fujyUd eFZsY"
+          >
+            <button
+              class="sc-dlnjPT gCAPDy"
+              style="background: white; border-radius: 5px; padding: 5px;"
+            >
+              <span
+                class="sc-bdnylx kYfRHA"
+              >
+                <svg
+                  class="sc-hKFyIo ftCoiL"
+                  color="black"
+                  height="20px"
+                  viewBox="0 0 1024 1024"
+                  width="20px"
+                >
+                  <path
+                    class="sc-eCApGN ijoIcd"
+                    color="black"
+                    d="M586.7 512L936 861.4a52.8 52.8 0 0 1-74.6 74.7L512 586.7 162.6 936A52.8 52.8 0 0 1 88 861.4L437.3 512 88 162.6A52.8 52.8 0 1 1 162.6 88L512 437.3 861.4 88a52.8 52.8 0 1 1 74.7 74.7L586.7 512z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div
+          class="sc-jrsJCI iAZucF"
+        />
+        <div
+          class="sc-pNWxx gnlcAa"
+        >
+          <button
+            class="sc-dlnjPT vpPrH"
+          >
+            <span
+              class="sc-bdnylx kYfRHA"
+            >
+              确认
+            </span>
+          </button>
+          <button
+            class="sc-dlnjPT vpPrH"
+            style="margin-left: 10px;"
+          >
+            <span
+              class="sc-bdnylx kYfRHA"
+            >
+              取消
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="sc-iCoHVE cVWdqH"
+      />
+    </div>
+  </body>,
+  "container": <div />,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

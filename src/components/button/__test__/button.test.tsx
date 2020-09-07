@@ -1,7 +1,7 @@
 import React from 'react';
-import { render, fireEvent, cleanup } from '@testing-library/react';
-import { Button, ButtonProps, btnPadding } from '../index';
-import { color, typography } from '../../shared/styles';
+import { render } from '@testing-library/react';
+import { fireEvent } from "@testing-library/dom";
+import { Button, ButtonProps } from '../index';
 const defaultProps = {
     onClick: jest.fn(),
     className: 'testprops',
@@ -45,126 +45,6 @@ describe('test Button component', () => {
 
         //span正常显示
         expect(ele.getElementsByTagName('span')).toBeTruthy();
-
-        //正常默认属性
-        expect(ele).toHaveStyle(`background:${color.tertiary}`);
-        expect(ele).toHaveStyle(`color: ${color.darkest}`);
-
-        //正常大小
-        expect(ele).toHaveStyle(`padding: ${btnPadding.medium}`);
-        expect(ele).toHaveStyle(`font-size:${typography.size.s2}px`);
-    });
-
-    it('should render correct appearance', () => {
-        // primary
-        let wrapper = render(
-            <Button data-testid="button" {...testProps}>
-                hello
-            </Button>
-        );
-        let ele = wrapper.getByTestId('button');
-        expect(ele).toHaveStyle(`background:${color.primary}`);
-        expect(ele).toHaveStyle(`color: ${color.lightest}`);
-        cleanup();
-
-        // inverseOutline
-        wrapper = render(
-            <Button data-testid="button" appearance="inverseOutline">
-                hello
-            </Button>
-        );
-        ele = wrapper.getByTestId('button');
-        expect(ele).toHaveStyle(`box-shadow: ${color.lightest} 0 0 0 1px inset`);
-        expect(ele).toHaveStyle(`color: ${color.lightest}`);
-        cleanup();
-
-        // inversePrimary
-        wrapper = render(
-            <Button data-testid="button" appearance="inversePrimary">
-                hello
-            </Button>
-        );
-        ele = wrapper.getByTestId('button');
-        expect(ele).toHaveStyle(`background:${color.lightest}`);
-        expect(ele).toHaveStyle(`color: ${color.primary}`);
-        cleanup();
-
-        // inverseSecondary
-        wrapper = render(
-            <Button data-testid="button" appearance="inverseSecondary">
-                hello
-            </Button>
-        );
-        ele = wrapper.getByTestId('button');
-        expect(ele).toHaveStyle(`background:${color.lightest}`);
-        expect(ele).toHaveStyle(`color: ${color.secondary}`);
-        cleanup();
-
-        // outline
-        wrapper = render(
-            <Button data-testid="button" appearance="outline">
-                hello
-            </Button>
-        );
-        ele = wrapper.getByTestId('button');
-        expect(ele).toHaveStyle(`background:transparent`);
-        expect(ele).toHaveStyle(`color: ${color.dark}`);
-        cleanup();
-
-        // primaryOutline
-        wrapper = render(
-            <Button data-testid="button" appearance="primaryOutline">
-                hello
-            </Button>
-        );
-        ele = wrapper.getByTestId('button');
-        expect(ele).toHaveStyle(`box-shadow: ${color.primary} 0 0 0 1px inset`);
-        expect(ele).toHaveStyle(`color: ${color.primary}`);
-        cleanup();
-
-        // secondary
-        wrapper = render(
-            <Button data-testid="button" appearance="secondary">
-                hello
-            </Button>
-        );
-        ele = wrapper.getByTestId('button');
-        expect(ele).toHaveStyle(`background:${color.secondary}`);
-        expect(ele).toHaveStyle(`color: ${color.lightest}`);
-        cleanup();
-
-        // secondaryOutline
-        wrapper = render(
-            <Button data-testid="button" appearance="secondaryOutline">
-                hello
-            </Button>
-        );
-        ele = wrapper.getByTestId('button');
-        expect(ele).toHaveStyle(`box-shadow: ${color.secondary} 0 0 0 1px inset`);
-        expect(ele).toHaveStyle(`color: ${color.secondary}`);
-    });
-
-    it('should render correct size ', () => {
-        // small size
-        let wrapper = render(
-            <Button data-testid="button" {...testProps}>
-                hello
-            </Button>
-        );
-        let ele = wrapper.getByTestId('button');
-        expect(ele).toHaveStyle(`padding: ${btnPadding.small}`);
-        expect(ele).toHaveStyle(`font-size:${typography.size.s1}px`);
-        cleanup();
-
-        // medium size
-        wrapper = render(
-            <Button data-testid="button" {...testProps} size="medium">
-                hello
-            </Button>
-        );
-        ele = wrapper.getByTestId('button');
-        expect(ele).toHaveStyle(`padding: ${btnPadding.medium}`);
-        expect(ele).toHaveStyle(`font-size:${typography.size.s2}px`);
     });
 
     it('should render a link', () => {
@@ -187,7 +67,6 @@ describe('test Button component', () => {
         );
         const ele = wrapper.getByTestId('button');
         expect(ele).toBeInTheDocument();
-        expect(ele).toHaveStyle('cursor: not-allowed');
         fireEvent.click(ele);
         expect(disabledProps.onClick).not.toHaveBeenCalled();
     });
@@ -200,9 +79,7 @@ describe('test Button component', () => {
         );
         const ele = wrapper.getByTestId('button');
         expect(ele).toBeInTheDocument();
-        expect(ele).toHaveStyle('cursor: progress');
         const text = wrapper.getByText('hello');
-        expect(text).toHaveStyle('opacity: 0');
         fireEvent.click(ele);
         expect(disabledProps.onClick).not.toHaveBeenCalled();
 
@@ -223,7 +100,6 @@ describe('test Button component', () => {
         );
         const ele = wrapper.getByTestId('button');
         expect(ele).toBeInTheDocument();
-        expect(ele).toHaveStyle('pointer-events: none');
         fireEvent.click(ele);
         expect(disabledProps.onClick).not.toHaveBeenCalled();
     });

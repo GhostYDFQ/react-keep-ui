@@ -26,17 +26,11 @@ describe("test Radio component", () => {
             ></Radio>
         );
         expect(wrapper).toMatchSnapshot();
-        const errortext = wrapper.getByText("errortext");
-        expect(errortext).toHaveStyle(`color:${color.negative}`);
-        const description = wrapper.getByText("description");
-        expect(description).toHaveStyle(`color:${color.mediumdark}`);
     });
 
     it("should hide label", () => {
         const wrapper = render(<Radio label="test" hideLabel></Radio>);
         expect(wrapper).toMatchSnapshot();
-        const text = wrapper.getByText("test");
-        expect(text).toHaveStyle("clip-path: inset(100%)");
     });
 
     it("should disabled", () => {
