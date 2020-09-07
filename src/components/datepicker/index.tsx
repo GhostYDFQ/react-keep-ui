@@ -101,7 +101,7 @@ const CalendarHeadWrapper = styled.div`
   flex-direction: column;
 `;
 
-type calDataType = [number, number,number];
+type calDataType = Array<number>;
 
 const btnStyle = {
     padding: "0px",

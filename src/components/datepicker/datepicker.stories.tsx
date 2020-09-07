@@ -1,13 +1,6 @@
 import React from "react";
 import { DatePicker } from "./index";
-import {
-    withKnobs,
-    text,
-    number,
-    boolean,
-    color,
-    select,
-} from "@storybook/addon-knobs";
+import { withKnobs, text, number } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 export default {

@@ -15,6 +15,5 @@ export * from "./components/progress";
 export * from "./components/radio";
 export * from "./components/upload";
 export * from "./components/tree";
-export * from "./components/datepicker";
 export * from "./components/pagination";
 export * from "./components/table";
