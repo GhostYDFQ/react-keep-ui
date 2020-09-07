@@ -7,7 +7,6 @@
     "@types/react-dom": "^16.9.8",
     "axios": "^0.20.0",
     "coveralls": "^3.1.0",
-    "patch-package": "^6.2.2",
     "polished": "^3.6.6",
     "prismjs": "^1.21.0",
     "react": "^16.13.1",
@@ -25,7 +24,7 @@
     "eject": "react-scripts eject",
     "build-storybook": "build-storybook --no-dll --quiet",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
     "test:watch": "react-scripts test",
     "coverage": "react-scripts test --coverage --watchAll=false",
     "coverall": "npm run coverage  && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
@@ -33,7 +32,8 @@
     "release": "npm run build && np"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "parser": "babel-eslint"
   },
   "browserslist": {
     "production": [

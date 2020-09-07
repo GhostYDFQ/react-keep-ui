@@ -86,8 +86,8 @@ type CarouselProps = WrapperProps & {
 
 function currentSetMap(
     current: number,
-    map: [number, number, number]
-): [number, number, number] {
+    map: Array<number>
+): Array<number> {
     let mid = map[1];
     if (mid === current) {
         return map;
@@ -99,7 +99,7 @@ function currentSetMap(
 }
 
 function mapToState(
-    map: [number, number, number],
+    map: Array<number>,
     children: ReactNode,
     totalLen: number
 ) {
@@ -120,8 +120,8 @@ function mapToState(
 function toMove(
     right: boolean,
     totalLen: number,
-    indexMap: [number, number, number],
-    setIndexMap: React.Dispatch<React.SetStateAction<[number, number, number]>>
+    indexMap: Array<number>,
+    setIndexMap: React.Dispatch<React.SetStateAction<Array<number>>>
 ) {
     let y;
     if (right) {
@@ -158,7 +158,7 @@ export function Carousel(props: PropsWithChildren<CarouselProps>) {
     //设置需要展示的元素
     const [state, setState] = useState<ReactNode[]>([]);
     //设置显示索引用
-    const [indexMap, setIndexMap] = useState<[number, number, number]>([
+    const [indexMap, setIndexMap] = useState<Array<number>>([
         -1,
         -1,
         -1,
@@ -203,7 +203,7 @@ export function Carousel(props: PropsWithChildren<CarouselProps>) {
     };
 
     useMemo(() => {
-        let map: [number, number, number] = [-1, -1, -1];
+        let map: Array<number> = [-1, -1, -1];
         map[1] = defaultIndex!;
         let res = mapToState(map, children, totalLen);
         setState(res);
